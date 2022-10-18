@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type node struct {
 	data int
@@ -33,8 +35,11 @@ func main() {
 	list.Display()
 	fmt.Println("Item count before delete:", list.Len())
 	list.Delete(38)
+
 	list.Display()
 	fmt.Println("Item count after delete:", list.Len())
+	//if list.Search()
+	fmt.Println("Finding item:", list.Search(48))
 
 }
 
@@ -90,4 +95,17 @@ func (l *linkedList) Delete(key int) {
 	l.lenght--
 	fmt.Println("Node deleted")
 
+}
+
+// Search a Node from the Linked List
+
+func (l *linkedList) Search(val int) int {
+	ptr := l.head
+	for i := 0; i < l.lenght; i++ {
+		if ptr.data == val {
+			return i
+		}
+		ptr = ptr.next
+	}
+	return -1
 }
