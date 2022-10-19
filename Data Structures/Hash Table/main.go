@@ -15,7 +15,12 @@ func main() {
 	items2["key3"] = "three"
 
 	fmt.Println(items1, items2)
-	fmt.Println(items1["key4"]) // in the course, in Python this retuns an error but in Go it returns nil
+	//fmt.Println(items1["key4"]) // in the course, in Python this retuns an error but in Go it returns nil
+	if key, ok := items1["key4"]; !ok {
+		fmt.Println("Key not found:", key)
+	} else {
+		fmt.Println(key)
+	}
 	items2["key2"] = "two"
 	fmt.Println(items2)
 
