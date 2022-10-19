@@ -15,8 +15,11 @@ func main() {
 	items2["key3"] = "three"
 
 	fmt.Println(items1, items2)
-	fmt.Println(items1["key4"]) // in the course, in Python this retuns an error but in go it returns nil
+	fmt.Println(items1["key4"]) // in the course, in Python this retuns an error but in Go it returns nil
 	items2["key2"] = "two"
 	fmt.Println(items2)
 
+	for k, v := range items2 {
+		fmt.Println("key:", k, ",", "value:", v)
+	}
 }
