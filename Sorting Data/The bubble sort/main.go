@@ -9,14 +9,15 @@ func main() {
 }
 
 func bubbleSort(dataset []int) {
-
-	for i := range dataset[1:] {
-		if dataset[i] > dataset[i+1] {
-			temp := dataset[i]
-			dataset[i] = dataset[i+1]
-			dataset[i+1] = temp
+	for i := len(dataset); i > 0; i-- {
+		for j := 1; j < i; j++ {
+			if dataset[j-1] > dataset[j] {
+				temp := dataset[j]
+				dataset[j] = dataset[j-1]
+				dataset[j-1] = temp
+				fmt.Println("Current state:", dataset)
+			}
 		}
-		fmt.Println("Current state:", dataset)
 	}
 
 }
