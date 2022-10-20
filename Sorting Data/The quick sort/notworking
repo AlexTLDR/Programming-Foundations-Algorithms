@@ -1,0 +1,50 @@
+package main
+
+import "fmt"
+
+func main() {
+	items := []int{20, 6, 8, 53, 56, 23, 87, 41, 49, 19}
+	fmt.Println(items)
+	quickSort(items)
+
+}
+
+func quickSort(dataset []int, first, last int) {
+	if first < last {
+		pivotIdx := partition(dataset, first, last)
+
+		quickSort(dataset, first, pivotIdx-1)
+		quickSort(dataset, pivotIdx+1, last)
+	}
+}
+
+func partition(datavalues []int, first, last int) int {
+	pivotvalue := datavalues[first]
+	lower := first + 1
+	upper := last
+
+	done := false
+
+	for !done {
+		for lower <= upper && datavalues[lower] <= pivotvalue {
+			lower += 1
+		}
+
+		for datavalues[upper] >= pivotvalue && upper >= lower {
+			upper -= 1
+		}
+
+		if upper < lower {
+			done = true
+		} else {
+			temp := datavalues[lower]
+			datavalues[lower] = datavalues[upper]
+			datavalues[upper] = temp
+		}
+	}
+
+	temp := datavalues[first]
+	datavalues[first] = datavalues[upper]
+	datavalues[upper] = temp
+	return upper
+}
