@@ -16,19 +16,18 @@ func mergeSort(dataset []int) {
 		rightarr := dataset[mid:]
 
 		// recursively break down the arrays
-
 		mergeSort(leftarr)
 		mergeSort(rightarr)
 
 		// perform the merging
 
-		i := 0
-		j := 0
-		k := 0
+		i := 0 // index into the left array
+		j := 0 // index into the right array
+		k := 0 // index into the merged array
 
 		// while both arrays have content
 
-		if i < len(leftarr) && j < len(rightarr) {
+		for i < len(leftarr) && j < len(rightarr) {
 			if leftarr[i] < rightarr[j] {
 				dataset[k] = leftarr[i]
 				i += 1
@@ -40,7 +39,8 @@ func mergeSort(dataset []int) {
 		}
 
 		// if the left array still has values, add them
-		if i < len(leftarr) {
+
+		for i < len(leftarr) {
 			dataset[k] = leftarr[i]
 			i += 1
 			k += 1
@@ -48,11 +48,11 @@ func mergeSort(dataset []int) {
 
 		// if the right array still has values, add them
 
-		if j < len(rightarr) {
-			dataset[k] = rightarr[i]
-			i += 1
+		for j < len(rightarr) {
+			dataset[k] = rightarr[j]
+			j += 1
 			k += 1
 		}
-	}
 
+	}
 }
