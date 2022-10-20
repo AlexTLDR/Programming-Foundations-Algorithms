@@ -5,58 +5,38 @@ import "fmt"
 func main() {
 	items := []int{6, 20, 8, 19, 56, 23, 87, 41, 49, 53}
 	fmt.Println("unsorted:", items)
-	mergeSort(items)
-	fmt.Println("sorted:", items)
+	fmt.Println("sorted:", mergeSort(items))
 }
 
 func mergeSort(dataset []int) []int {
-	if len(dataset) > 1 {
-		mid := len(dataset) / 2
-		leftarr := dataset[:mid]
-		rightarr := dataset[mid:]
+	if len(dataset) < 2 {
+		return dataset
+	}
+	leftarr := mergeSort(dataset[:len(dataset)/2])
+	rightarr := mergeSort(dataset[len(dataset)/2:])
+	return merge(leftarr, rightarr)
 
-		// recursively break down the arrays
-		mergeSort(leftarr)
-		mergeSort(rightarr)
-		return merge(leftarr, rightarr)
-
-	
 }
 
 func merge(leftarr, rightarr []int) []int {
-	// perform the merging
-
-	i := 0 // index into the left array
-	j := 0 // index into the right array
-	k := 0 // index into the merged array
-
-	// while both arrays have content
+	merged := []int{}
+	i := 0
+	j := 0
 
 	for i < len(leftarr) && j < len(rightarr) {
 		if leftarr[i] < rightarr[j] {
-			dataset[k] = leftarr[i]
-			i += 1
+			merged = append(merged, leftarr[i])
+			i++
 		} else {
-			dataset[k] = rightarr[j]
-			j += 1
-			k += 1
+			merged = append(merged, rightarr[j])
+			j++
 		}
 	}
-
-	// if the left array still has values, add them
-
-	for i < len(leftarr) {
-		dataset[k] = leftarr[i]
-		i += 1
-		k += 1
+	for ; i < len(leftarr); i++ {
+		merged = append(merged, leftarr[i])
 	}
-
-	// if the right array still has values, add them
-
-	for j < len(rightarr) {
-		dataset[k] = rightarr[j]
-		j += 1
-		k += 1
+	for ; j < len(rightarr); j++ {
+		merged = append(merged, rightarr[j])
 	}
-
+	return merged
 }
