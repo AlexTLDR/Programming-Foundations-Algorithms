@@ -10,12 +10,12 @@ func main() {
 }
 
 func findItem(item int, itemList []int) any {
-	for i := range itemList {
-		if item == itemList[i] {
-			return i
+	for _, v := range itemList {
+		if item == v {
+			return v
 		}
 
 	}
-	return "none"
+	return "None"
 
 }
