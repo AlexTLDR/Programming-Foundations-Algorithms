@@ -15,7 +15,7 @@ func isSorted(itemList []int) bool {
 
 	//using the brute force method
 
-	for i := range itemList {
+	for i := 0; i < len(itemList)-1; i++ {
 		if itemList[i] > itemList[i+1] {
 			return false
 		}
