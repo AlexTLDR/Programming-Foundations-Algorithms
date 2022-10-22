@@ -5,7 +5,8 @@ import "fmt"
 func main() {
 	items := []int{6, 20, 8, 19, 56, 23, 87, 41, 49, 53}
 	fmt.Println("unsorted:", items)
-	fmt.Println("sorted:", mergeSort(items))
+	//fmt.Println("sorted:", mergeSort(items))
+	fmt.Println("sorted:", mergeSort2(items))
 }
 
 func mergeSort(dataset []int) []int {
