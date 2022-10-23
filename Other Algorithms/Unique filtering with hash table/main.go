@@ -11,7 +11,7 @@ func main() {
 
 func removeDuplicate(items []string) []string {
 
-	// create a hashtable
+	//create a hashtable
 	filter := make(map[string]bool)
 	list := []string{}
 
