@@ -59,7 +59,7 @@ func TestSumRecursive(t *testing.T) {
 	}
 	for _, tc := range tests {
 		t.Run(fmt.Sprintf("(%v)", tc.numbers), func(t *testing.T) {
-			got := Sum(tc.numbers)
+			got := SumRecursive(tc.numbers)
 			if got != tc.want {
 				t.Fatalf("Sum() = %v; want %v", got, tc.want)
 			}
