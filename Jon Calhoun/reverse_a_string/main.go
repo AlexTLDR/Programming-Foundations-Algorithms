@@ -19,8 +19,14 @@ func Reverse(word string) string {
 
 func BuildStrReversed(word string) string {
 	var reversed string
-	for i := range word {
-		reversed = string(word[i]) + reversed
+	// for i := range word {
+	// 	reversed = string(word[i]) + reversed
+	// }
+
+	// making the code test the rune test
+
+	for _, r := range word {
+		reversed = string(r) + reversed
 	}
 
 	return reversed
