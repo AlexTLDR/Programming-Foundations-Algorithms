@@ -17,12 +17,12 @@ func FizzBuzz(n int) {
 		} else if i%3 == 0 {
 			fmt.Printf("Fizz")
 		} else {
-			fmt.Printf("%d ", i)
+			fmt.Printf("%d", i)
 		}
 		if i < n {
 			fmt.Printf(", ")
 		} else {
-			fmt.Println("")
+			fmt.Printf("\n")
 		}
 	}
 }
