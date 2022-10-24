@@ -10,19 +10,34 @@ func main() {
 func FizzBuzz(n int) {
 
 	for i := 1; i <= n; i++ {
-		if i%15 == 0 {
+		switch {
+		case i%15 == 0:
 			fmt.Printf("Fizz Buzz")
-		} else if i%5 == 0 {
+		case i%5 == 0:
 			fmt.Printf("Buzz")
-		} else if i%3 == 0 {
+		case i%3 == 0:
 			fmt.Printf("Fizz")
-		} else {
+		default:
 			fmt.Printf("%d", i)
 		}
-		if i < n {
+		if i != n {
 			fmt.Printf(", ")
-		} else {
-			fmt.Printf("\n")
 		}
+
+		// if i%15 == 0 {
+		// 	fmt.Printf("Fizz Buzz")
+		// } else if i%5 == 0 {
+		// 	fmt.Printf("Buzz")
+		// } else if i%3 == 0 {
+		// 	fmt.Printf("Fizz")
+		// } else {
+		// 	fmt.Printf("%d", i)
+		// }
+		// if i < n {
+		// 	fmt.Printf(", ")
+		// } else {
+		// 	fmt.Printf("\n")
+		// }
 	}
+	fmt.Printf("\n")
 }
