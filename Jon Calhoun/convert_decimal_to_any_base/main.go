@@ -13,7 +13,7 @@ func DecToBase(dec, base int) string {
 	var res string
 	for dec > 0 {
 		rem := dec % base
-		res = fmt.Sprintf("%d%s", rem, res)
+		res = fmt.Sprintf("%X%s", rem, res)
 		dec = dec / base
 	}
 	return res
