@@ -3,11 +3,12 @@ package main
 import "fmt"
 
 func main() {
-
+	fmt.Println(BaseToBase("E", 16, 2))
 }
 
 func BaseToBase(value string, base, newBase int) string {
-	return ""
+	dec := BaseToDec(value, base)
+	return DecToBase(dec, newBase)
 }
 
 func BaseToDec(value string, base int) int {
