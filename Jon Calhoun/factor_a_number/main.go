@@ -11,11 +11,13 @@ func main() {
 func Factor(primes []int, number int) []int {
 	var res []int
 	for _, prime := range primes {
-		if number%prime == 0 {
+		for number%prime == 0 {
 			res = append(res, prime)
 			number = number / prime
 		}
 	}
-
+	if number > 1 {
+		res = append(res, number)
+	}
 	return res
 }
