@@ -7,8 +7,8 @@ func main() {
 }
 
 func BaseToBase(value string, base, newBase int) string {
-	dec := BaseToDec(value, base)
-	return DecToBase(dec, newBase)
+
+	return DecToBase(BaseToDec(value, base), newBase)
 }
 
 func BaseToDec(value string, base int) int {
