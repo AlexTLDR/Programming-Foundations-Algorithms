@@ -12,11 +12,13 @@ func main() {
 }
 
 func BaseToDec(value string, base int) int {
-	//i, _ := strconv.Atoi(value)
 	result := 0
-	for i := 0; i < len(value); i++ {
-		digit := base ^ len(value) - 1
-		result += digit
+	multiplier := 1
+	var val int
+	for i := len(value) - 1; i >= 0; i-- {
+		fmt.Sscanf(string(value[i]), "%X", &val)
+		result = result + multiplier*val
+		multiplier = multiplier * base
 	}
 	return result
 }
