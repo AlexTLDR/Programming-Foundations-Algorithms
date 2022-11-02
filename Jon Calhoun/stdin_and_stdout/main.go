@@ -15,4 +15,24 @@ func main() {
 		names = append(names, name)
 	}
 	fmt.Println(names)
+
+	fmt.Println("----------------------------------------------")
+	fmt.Println("Please enter the number of imputs with space between them")
+	var m int
+	fmt.Scanf("%d", &m)
+
+	for i := 0; i < m; i++ {
+		var a, b int
+		fmt.Scanf("%d %d", &a, &b)
+		fmt.Println("The GCD is:", GCD(a, b))
+
+	}
+}
+
+func GCD(a, b int) int {
+
+	for b != 0 {
+		a, b = b, a%b
+	}
+	return a
 }

@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(GCD(15, 20))
+	fmt.Println(GCD(15, 9))
 }
 
 func GCD(a, b int) int {
